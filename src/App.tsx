@@ -7,7 +7,14 @@ import React, { useState, useEffect } from 'react';
 import { Shield, Terminal } from 'lucide-react';
 import DOMPurify from 'dompurify';
 
-// Atoms
+/**
+ * A component that renders a stylized data node with a label and value.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.label - The label for the data node.
+ * @param {string | number} props.value - The value to display.
+ * @returns {React.JSX.Element} The rendered data node component.
+ */
 const DataNode = ({ label, value }: { label: string; value: string | number }) => (
   <div className="flex flex-col border-l-2 border-cyan-900 pl-4">
     <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{label}</span>
@@ -15,7 +22,14 @@ const DataNode = ({ label, value }: { label: string; value: string | number }) =
   </div>
 );
 
-// Molecules
+/**
+ * A component that renders a navigation ribbon button.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The text to display on the ribbon.
+ * @param {boolean} [props.active] - Whether the ribbon is currently active.
+ * @returns {React.JSX.Element} The rendered navigation ribbon component.
+ */
 const NavRib = ({ title, active }: { title: string; active?: boolean }) => (
   <button 
     aria-pressed={active}
@@ -27,7 +41,11 @@ const NavRib = ({ title, active }: { title: string; active?: boolean }) => (
   </button>
 );
 
-// Organisms
+/**
+ * A component that renders the primary navigation matrix for the application.
+ *
+ * @returns {React.JSX.Element} The rendered navigation matrix component.
+ */
 const NavigationMatrix = () => (
   <nav aria-label="Primary Matrix" className="relative z-10 w-full pt-12 pb-32 px-12 bg-zinc-950 border-b border-zinc-800">
     <div className="max-w-7xl mx-auto flex justify-between items-start">
@@ -44,6 +62,12 @@ const NavigationMatrix = () => (
   </nav>
 );
 
+/**
+ * A component that renders a hero section displaying simulated data visualization.
+ * It manages a data stream state and a sanitized log string.
+ *
+ * @returns {React.JSX.Element} The rendered hero data visualization component.
+ */
 const HeroDataVis = () => {
   const [stream, setStream] = useState<number>(0);
   const [sanitizedLog, setSanitizedLog] = useState<string>('');
@@ -92,6 +116,11 @@ const HeroDataVis = () => {
   );
 };
 
+/**
+ * The main application component that orchestrates the layout and primary sections.
+ *
+ * @returns {React.JSX.Element} The rendered main application component.
+ */
 export default function App() {
   return (
     <main className="min-h-screen bg-zinc-950 selection:bg-cyan-900 selection:text-cyan-50">
