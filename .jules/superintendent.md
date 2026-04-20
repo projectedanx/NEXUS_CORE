@@ -1,0 +1,2 @@
+- **Instability**: Extraneous build tools and typings present in production dependencies, specifically `@tailwindcss/vite`, `@types/dompurify`, `@vitejs/plugin-react`, and a duplicated `vite` entry.
+- **Fortification**: Migrated build tools and typings to `devDependencies` and eradicated the redundant `vite` installation to secure manifest integrity and prevent container bloat.
