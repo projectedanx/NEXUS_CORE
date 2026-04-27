@@ -57,6 +57,7 @@ const NavigationMatrix = () => (
         <NavRib title="Telemetry" active />
         <NavRib title="Topologies" />
         <NavRib title="Protocols" />
+        <NavRib title="Isomorphic Bridges" />
       </div>
     </div>
   </nav>
@@ -68,6 +69,57 @@ const NavigationMatrix = () => (
  *
  * @returns {React.JSX.Element} The rendered hero data visualization component.
  */
+
+/**
+ * A component that renders an Isomorphic Bridge data visualization.
+ * It maps Protein Folding to Microservice Routing as described in PAT-001.
+ *
+ * @returns {React.JSX.Element} The rendered Isomorphic Bridge visualization component.
+ */
+const IsomorphicBridgeViewer = () => {
+  const [energyBarrier, setEnergyBarrier] = useState<number>(0);
+  const [autoScalingTrigger, setAutoScalingTrigger] = useState<number>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const e = Math.random() * 100;
+      setEnergyBarrier(e);
+      setAutoScalingTrigger(e * 1.5);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <article
+      aria-live="polite"
+      className="relative z-20 mx-auto max-w-6xl mt-8 bg-zinc-900 border border-purple-900/50 p-8 shadow-[0_0_40px_rgba(88,28,135,0.2)]"
+    >
+      <header className="mb-8 flex justify-between items-end border-b border-zinc-800 pb-4">
+        <h2 className="text-xl font-mono text-purple-400 uppercase tracking-widest">Isomorphic Bridge (PAT-001)</h2>
+        <div className="flex items-center gap-4">
+          <span className="text-xs font-mono text-zinc-500">Protein Folding x Microservices</span>
+        </div>
+      </header>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="border border-zinc-800 p-4">
+          <h3 className="text-sm font-mono text-zinc-400 mb-4">Domain A: Protein Folding</h3>
+          <DataNode label="Free-Energy Barrier" value={`${energyBarrier.toFixed(2)} kcal/mol`} />
+        </div>
+        <div className="border border-zinc-800 p-4">
+          <h3 className="text-sm font-mono text-zinc-400 mb-4">Domain B: Microservice Routing</h3>
+          <DataNode label="Auto-Scaling Trigger Queue" value={`${autoScalingTrigger.toFixed(0)} requests/s`} />
+        </div>
+      </section>
+
+      <div className="mt-8 text-xs font-mono text-zinc-500 border-l-2 border-purple-900 pl-4">
+        <p>Phronesis Index Φ = 0.082</p>
+        <p>Graph Isomorphism Score = 0.74</p>
+      </div>
+    </article>
+  );
+};
+
 const HeroDataVis = () => {
   const [stream, setStream] = useState<number>(0);
   const [sanitizedLog, setSanitizedLog] = useState<string>('');
@@ -126,6 +178,7 @@ export default function App() {
     <main className="min-h-screen bg-zinc-950 selection:bg-cyan-900 selection:text-cyan-50">
       <NavigationMatrix />
       <HeroDataVis />
+      <IsomorphicBridgeViewer />
     </main>
   );
 }
