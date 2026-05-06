@@ -43,6 +43,13 @@ The application is a showcase of building stylized user interfaces using functio
 
 - **Atoms**: Basic UI units (e.g., `DataNode`).
 - **Molecules**: Compound UI elements (e.g., `NavRib`).
-- **Organisms**: Complex sections combining multiple components (e.g., `NavigationMatrix`, `HeroDataVis`).
+
+- **Organisms**: Complex sections combining multiple components (e.g., `NavigationMatrix`, `HeroDataVis`, `IsomorphicBridgeViewer`, `StigmergicMonitor`).
+
+### Agentic Emergence Strategy
+
+As articulated in `agentic_emergence/VISION.md`, this application operates on an inverted agentic strategy. The application itself provides the Stigmergic environment (Symbolic Scars and virtual pheromones), providing the structural constraints required by AI models (VULCAN) to navigate complex domain mappings without suffering from mode collapse or topological drift.
+The `StigmergicMonitor` component serves as a visual bridge for this process.
+
 
 Every public function, component, and configuration block contains standard JSDoc/TSDoc comments explaining its inputs, functionality, and output.

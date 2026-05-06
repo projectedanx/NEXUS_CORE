@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Terminal } from 'lucide-react';
 import DOMPurify from 'dompurify';
+import { StigmergicMonitor } from './StigmergicMonitor';
 
 /**
  * A component that renders a stylized data node with a label and value.
@@ -58,6 +59,7 @@ const NavigationMatrix = () => (
         <NavRib title="Topologies" />
         <NavRib title="Protocols" />
         <NavRib title="Isomorphic Bridges" />
+        <NavRib title="Stigmergic Monitor" />
       </div>
     </div>
   </nav>
@@ -179,6 +181,7 @@ export default function App() {
       <NavigationMatrix />
       <HeroDataVis />
       <IsomorphicBridgeViewer />
+      <StigmergicMonitor />
     </main>
   );
 }
