@@ -53,3 +53,21 @@ The `StigmergicMonitor` component serves as a visual bridge for this process.
 
 
 Every public function, component, and configuration block contains standard JSDoc/TSDoc comments explaining its inputs, functionality, and output.
+
+
+## Comprehensive Developer Guide
+
+### Advanced Setup
+
+To ensure you have the full development environment, ensure all tools like ESLint and Prettier are installed, though they might not be part of this baseline repository. Run `npm run lint` as a continuous check.
+
+### Usage
+
+The application uses Vite for fast module replacement. By default, it operates on `localhost:3000`.
+The UI components in `src/App.tsx` define complex interfaces. `StigmergicMonitor` works out of the box as a dynamic visualizer for telemetry.
+
+### Architectural Additions
+
+- **Hooks**: We recommend creating a `src/hooks` directory for any newly extracted logic to keep components lean.
+- **State Management**: The application leans on standard React state. More complex state requires context or a library like Zustand.
+- **Documentation Rules**: All new components and functions must include TSDoc/JSDoc docstrings for maintainability.

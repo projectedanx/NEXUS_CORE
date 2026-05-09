@@ -66,13 +66,6 @@ const NavigationMatrix = () => (
 );
 
 /**
- * A component that renders a hero section displaying simulated data visualization.
- * It manages a data stream state and a sanitized log string.
- *
- * @returns {React.JSX.Element} The rendered hero data visualization component.
- */
-
-/**
  * A component that renders an Isomorphic Bridge data visualization.
  * It maps Protein Folding to Microservice Routing as described in PAT-001.
  *
@@ -122,6 +115,12 @@ const IsomorphicBridgeViewer = () => {
   );
 };
 
+/**
+ * A component that renders a hero section displaying simulated data visualization.
+ * It manages a data stream state and a sanitized log string.
+ *
+ * @returns {React.JSX.Element} The rendered hero data visualization component.
+ */
 const HeroDataVis = () => {
   const [stream, setStream] = useState<number>(0);
   const [sanitizedLog, setSanitizedLog] = useState<string>('');

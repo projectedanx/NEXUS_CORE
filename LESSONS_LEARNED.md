@@ -26,3 +26,9 @@
 ## Agentic Emergence Strategy: Stigmergic Trace Monitor
 - Implemented `StigmergicMonitor` to observe the boundary constraints and virtual pheromones, mapping human ontological grounding to AI topological execution (PAT-008).
 - AI agentic inversion is managed actively by UI abstractions (Epistemic Escrow visualizers) rather than just passive code constraints.
+
+
+## Code Documentation and Hygiene
+- **Strict Dependency Pinning**: Removing carets and tildes from package versions prevents unexpected drift in development and production environments.
+- **Enforced Docstrings**: Enforcing a rule that every public function, component, and class must have a JSDoc/TSDoc string ensures onboarding remains trivial, even as domain logic (like Stigmergic Monitors and Isomorphic Bridges) becomes highly complex.
+- **Purity of Root**: Maintaining a clean root directory free of unimported scripts prevents cognitive load for new developers entering the repository.
